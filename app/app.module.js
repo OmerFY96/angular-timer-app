@@ -8,5 +8,6 @@ angular.module("myApp", [
     "ngAria",
     "ngAnimate",
     "angularMoment",
-    "highcharts-ng"
+    "highcharts-ng",
+    "core"
 ]);
