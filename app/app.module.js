@@ -9,5 +9,11 @@ angular.module("myApp", [
     "ngAnimate",
     "angularMoment",
     "highcharts-ng",
-    "core"
+    "core",
+    "homePage",
+    "addRemoveCompany",
+    "addRemoveTask",
+    "changeCompanyTask",
+    "showStats",
+    "clearData"
 ]);
