@@ -1,7 +1,19 @@
 <md-toolbar class="md-hue-2">
     <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
+        <md-button ng-click="$ctrl.toggleLeft()" class="md-icon-button" aria-label="Settings">
             <md-icon md-svg-icon="img/baseline-menu-24px.svg"></md-icon>
         </md-button>
     </div>
 </md-toolbar>
+
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+    <md-content layout-margin>
+        <md-list>
+            <md-list-item ng-href="{{ page.url }}" ng-click="$ctrl.toggleLeft()" ng-repeat="page in $ctrl.pages">
+                <md-icon md-svg-icon="{{ page.icon }}"></md-icon>
+                <p>{{ page.name }}</p>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>
