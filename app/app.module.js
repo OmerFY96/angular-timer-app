@@ -10,6 +10,7 @@ angular.module("myApp", [
     "angularMoment",
     "highcharts-ng",
     "core",
+    "mainMenu",
     "homePage",
     "addRemoveCompany",
     "addRemoveTask",

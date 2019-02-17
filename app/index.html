@@ -11,14 +11,7 @@
 
 <body>
 
-    <md-toolbar class="md-hue-2">
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Settings">
-                <md-icon md-svg-icon="img/baseline-menu-24px.svg"></md-icon>
-            </md-button>
-        </div>
-    </md-toolbar>
-
+    <main-menu></main-menu>
     <div ng-view></div>
 
     <script src="node_modules/angular/angular.min.js"></script>
@@ -38,6 +31,8 @@
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
     <script src="core/core.module.js"></script>
+    <script src="main-menu/main-menu.module.js"></script>
+    <script src="main-menu/main-menu.component.js"></script>
     <script src="home-page/home-page.module.js"></script>
     <script src="home-page/home-page.component.js"></script>
     <script src="add-remove-company/add-remove-company.module.js"></script>
