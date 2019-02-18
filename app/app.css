@@ -5,3 +5,24 @@ body {
 md-list {
     padding: 0;
 }
+
+/* Add/remove company */
+#company-name-input {
+    margin-bottom: 0;
+}
+
+#add-company-button {
+    margin-top: 0;
+}
+
+#company-list-title {
+    font-size: 1.5em;
+}
+
+#company-checkbox {
+    margin: 16px 3px;
+}
+
+.company-remove-button {
+    margin: 10px 10px 15px 10px;
+}

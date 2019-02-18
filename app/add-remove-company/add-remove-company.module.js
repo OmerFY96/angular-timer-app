@@ -1,3 +1,10 @@
 'use strict';
 
-angular.module("addRemoveCompany", []);
+angular.module("addRemoveCompany", [
+    "LocalStorageModule",
+    "ngMaterial",
+    "ngMessages",
+    "ngAria",
+    "ngAnimate",
+    "core"
+]);

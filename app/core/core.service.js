@@ -11,16 +11,6 @@ angular.module("core").service("common", function (localStorageService, moment) 
      *   with the key "comp.isRunning".
      */
 
-    // return a new company object with the given name
-    this.newCompany = (cName) => {
-        return {
-            "name": cName,
-            "toBeRemoved": false,
-            "taskNum": null,
-            "tasks": []
-        };
-    };
-
     // return array of company objects stored in the local storage
     this.getCompanies = () => {
         return localStorageService.keys().filter(k => k.substring(0, 5) !== "comp.").
@@ -35,6 +25,11 @@ angular.module("core").service("common", function (localStorageService, moment) 
     // set the currently selected company
     this.setCurrentCompany = (name) => {
         localStorageService.set("comp.curCompanyName", name);
+    };
+
+    // return the name of the currently selected company
+    this.getCurrentCompanyName = () => {
+        return localStorageService.get("comp.curCompanyName");
     };
 
     // return the current company object from the local storage

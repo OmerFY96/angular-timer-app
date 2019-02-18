@@ -1,1 +1,26 @@
-<h1>Add Remove Company</h1>
+<div layout="column">
+    <div flex-order=1 layout="column">
+        <md-input-container md-no-float class="md-block" id="company-name-input" flex>
+            <md-icon md-svg-src="img/baseline-add_circle_outline-24px.svg"></md-icon>
+            <input type="text" ng-model="$ctrl.newCompany" placeholder="Company Name">
+        </md-input-container>
+        <md-button ng-click="$ctrl.addCompany($ctrl.newCompany)" ng-disabled="$ctrl.newCompany === ''" class="md-raised"
+            id="add-company-button" md-ink-ripple="false">
+            Add Company
+        </md-button>
+    </div>
+
+    <div flex-order=2 layout="column">
+        <md-list>
+            <md-subheader class="md-no-sticky" id="company-list-title">Companies</md-subheader>
+            <md-list-item ng-repeat="company in $ctrl.companies" md-no-ink="true" layout="row">
+                <p>{{ company.name }}</p>
+                <md-checkbox ng-model="company.toBeRemoved" id="company-checkbox"></md-checkbox>
+            </md-list-item>
+        </md-list>
+        <md-button ng-click="$ctrl.removeCompanies()" ng-disabled="$ctrl.companies.length === 0"
+            class="md-raised company-remove-button" md-ink-ripple="false">
+            Remove Selected Companies
+        </md-button>
+    </div>
+</div>
