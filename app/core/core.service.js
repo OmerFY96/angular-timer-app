@@ -44,6 +44,27 @@ angular.module("core").service("common", function (localStorageService, moment) 
         this.setCompany(c.name, c);
     };
 
+    // return the index of the current task
+    this.getCurrentTaskNum = () => {
+        if (this.getCurrentCompany() === null) {
+            return null;
+        }
+        else {
+            return this.getCurrentCompany().taskNum;
+        }
+    };
+
+    // return the name of the currently selected task of the company
+    // if the company has no tasks or there is no company selected return "No tasks"
+    this.getCurrentTaskName = () => {
+        if (this.getCurrentCompany() === null || this.getCurrentCompany().tasks.length === 0) {
+            return "No tasks";
+        }
+        else {
+            return this.getCurrentCompany().tasks[this.getCurrentTaskNum()].taskName;
+        }
+    };
+
     // set the current timer duration to d (milliseconds)
     this.setCurrentDuration = (d) => {
         localStorageService.set("comp.currentDuration", d);

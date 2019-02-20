@@ -18,10 +18,10 @@ angular.module("addRemoveCompany").component("addRemoveCompany", {
         };
 
         // add a new company object to the local storage
-        this.addCompany = (name) => {
-            let newComp = this.makeNewCompany(name);
-            common.setCompany(name, newComp);
-            common.setCurrentCompany(name);
+        this.addCompany = () => {
+            let newComp = this.makeNewCompany(this.newCompany);
+            common.setCompany(this.newCompany, newComp);
+            common.setCurrentCompany(this.newCompany);
             common.setCurrentTaskNum(null);
             common.setCurrentDuration(null);
             this.companies = common.getCompanies();

@@ -6,23 +6,27 @@ md-list {
     padding: 0;
 }
 
-/* Add/remove company */
-#company-name-input {
+/* Input fields in add/remove company and add/remove task */
+.name-input {
     margin-bottom: 0;
 }
 
-#add-company-button {
+/* Add buttons in add/remove company add/remove task */
+.add-button {
     margin-top: 0;
 }
 
-#company-list-title {
+/* Titles of the lists in add/remove company and add/remove task */
+md-list .md-subheader.list-title {
     font-size: 1.5em;
 }
 
-#company-checkbox {
+/* Checkboxes for the list items above */
+md-list-item .md-list-item-inner>md-checkbox.remove-checkbox {
     margin: 16px 3px;
 }
 
-.company-remove-button {
+/* Remove buttons in add/remove company and add/remove task */
+.remove-button {
     margin: 10px 10px 15px 10px;
 }

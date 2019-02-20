@@ -1,1 +1,27 @@
-<h1>Add Remove Task</h1>
+<div layout="column">
+    <div flex-order=1 layout="column">
+        <md-input-container md-no-float class="md-block name-input" flex>
+            <md-icon md-svg-icon="img/baseline-add_circle-24px.svg"></md-icon>
+            <input type="text" ng-model="$ctrl.newTask" placeholder="Task Name">
+        </md-input-container>
+        <md-button ng-click="$ctrl.addTask()" ng-disabled="$ctrl.newTask === ''" class="md-raised add-button"
+            md-ink-ripple="false">
+            Add Task
+        </md-button>
+    </div>
+
+    <div flex-order=2 layout="column">
+        <md-list>
+            <md-subheader class="md-no-sticky list-title">Tasks for {{ $ctrl.currentCompanyName }}
+            </md-subheader>
+            <md-list-item ng-repeat="task in $ctrl.tasks" md-no-ink="true" layout="row">
+                <p>{{ task.taskName }}</p>
+                <md-checkbox ng-model="task.toBeRemoved" class="remove-checkbox"></md-checkbox>
+            </md-list-item>
+        </md-list>
+        <md-button ng-click="$ctrl.removeTasks()" ng-disabled="$ctrl.tasks.length === 0"
+            class="md-raised remove-button" md-ink-ripple="false">
+            Remove Selected Tasks
+        </md-button>
+    </div>
+</div>
