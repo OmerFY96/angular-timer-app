@@ -1,3 +1,10 @@
 'use strict';
 
-angular.module("changeCompanyTask", []);
+angular.module("changeCompanyTask", [
+    "LocalStorageModule",
+    "ngMaterial",
+    "ngMessages",
+    "ngAria",
+    "ngAnimate",
+    "core"
+]);

@@ -37,6 +37,17 @@ angular.module("core").service("common", function (localStorageService, moment) 
         return localStorageService.get(this.getCurrentCompanyName());
     };
 
+    // return the tasks of the current company
+    // return empty array if no company is selected
+    this.getTasks = () => {
+        if (this.getCurrentCompany() === null) {
+            return [];
+        }
+        else {
+            return this.getCurrentCompany().tasks;
+        }
+    };
+
     // change the taskNum of the current company to n
     this.setCurrentTaskNum = (n) => {
         let c = this.getCurrentCompany();

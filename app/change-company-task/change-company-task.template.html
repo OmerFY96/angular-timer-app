@@ -1,1 +1,29 @@
-<h1>Change Company Task</h1>
+<div layout="column" ng-cloak>
+    <div flex-order="1" layout="column" class="md-padding">
+        <h1 class="md-title">Pick a company</h1>
+        <md-input-container layout="column">
+            <md-select ng-model="$ctrl.selectedCompanyName" ng-change="$ctrl.changeCurrentCompany()" md-on-close="$ctrl.updateTasks()"
+                ng-disabled="$ctrl.companies.length === 0" aria-label="Select company">
+                <md-optgroup>
+                    <md-option ng-repeat="company in $ctrl.companies" ng-value="company.name">
+                        {{ company.name }}
+                    </md-option>
+                </md-optgroup>
+            </md-select>
+        </md-input-container>
+    </div>
+
+    <div flex-order="2" layout="column" class="md-padding">
+        <h1 class="md-title">Pick a task</h1>
+        <md-input-container layout="column">
+            <md-select ng-model="$ctrl.selectedTaskName" ng-change="$ctrl.changeCurrentTask()" ng-disabled="$ctrl.tasks.length === 0"
+                aria-label="Select task">
+                <md-optgroup>
+                    <md-option ng-repeat="task in $ctrl.tasks" ng-value="task.taskName">
+                        {{ task.taskName }}
+                    </md-option>
+                </md-optgroup>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
