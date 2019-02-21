@@ -1,3 +1,12 @@
 'use strict';
 
-angular.module("showStats", []);
+angular.module("showStats", [
+    "LocalStorageModule",
+    "ngMaterial",
+    "ngMessages",
+    "ngAria",
+    "ngAnimate",
+    "angularMoment",
+    "highcharts-ng",
+    "core"
+]);
