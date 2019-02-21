@@ -1,3 +1,11 @@
 'use strict';
 
-angular.module("homePage", []);
+angular.module("homePage", [
+    "LocalStorageModule",
+    "ngMaterial",
+    "ngMessages",
+    "ngAria",
+    "ngAnimate",
+    "angularMoment",
+    "core"
+]);

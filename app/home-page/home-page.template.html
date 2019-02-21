@@ -1,1 +1,17 @@
-<h1>Home Page</h1>
+<div layout="column">
+    <div layout="column" layout-align="space-around center" layout-margin layout-padding>
+        <h1>{{ $ctrl.currentCompany === null ? "No company" : $ctrl.currentCompany.name }}</h1>
+        <h2>{{ $ctrl.currentTaskName }}</h2>
+        <h3 ng-class="{ 'pulse': $ctrl.isRunning() }">{{ $ctrl.getCurrentDuration() | amDurationFormat : 'seconds' }}</h3>
+    </div>
+
+    <div layout="row">
+        <md-button ng-click="$ctrl.isRunning() ? $ctrl.stopTimer() : $ctrl.startTimer()" class="md-fab md-primary md-fab-bottom-right home-buttons"
+            id="start-stop">
+            {{ $ctrl.isRunning() ? 'Stop' : 'Start' }}
+        </md-button>
+        <md-button ng-click="$ctrl.resetTimer()" class="md-fab md-fab-bottom-left home-buttons">
+            Reset
+        </md-button>
+    </div>
+</div>

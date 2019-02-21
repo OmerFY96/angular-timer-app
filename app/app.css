@@ -30,3 +30,39 @@ md-list-item .md-list-item-inner>md-checkbox.remove-checkbox {
 .remove-button {
     margin: 10px 10px 15px 10px;
 }
+
+.home-buttons {
+    position: fixed !important;
+}
+
+.pulse {
+    border-radius: 10%;
+    box-shadow: 0 0 0 rgba(15,168,239, 0.4);
+    animation: pulse 1s infinite;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(15,168,239, 0.4);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(15,168,239, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(15,168,239, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(15,168,239, 0.4);
+      box-shadow: 0 0 0 0 rgba(15,168,239, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(15,168,239, 0);
+        box-shadow: 0 0 0 10px rgba(15,168,239, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(15,168,239, 0);
+        box-shadow: 0 0 0 0 rgba(15,168,239, 0);
+    }
+  }

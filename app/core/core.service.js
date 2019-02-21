@@ -80,4 +80,36 @@ angular.module("core").service("common", function (localStorageService, moment) 
     this.setCurrentDuration = (d) => {
         localStorageService.set("comp.currentDuration", d);
     };
+
+    // return the duration of the timer (milliseconds)
+    this.getCurrentDuration = () => {
+        return localStorageService.get("comp.currentDuration");
+    };
+
+    // add d to the total duration of the current task
+    this.addTotalDuration = (d) => {
+        let c = this.getCurrentCompany();
+        try {
+            c.tasks[this.getCurrentTaskNum()].totalDuration += d;
+        }
+        catch (e) { }
+        this.setCompany(c.name, c);
+    };
+
+    // add d to the current duration of the timer
+    this.addToCurrentDuration = (d) => {
+        this.addTotalDuration(d);
+        let total = this.getCurrentDuration() + d;
+        this.setCurrentDuration(total);
+    };
+
+    // return the state of the timer (true if running, false if paused)
+    this.getTimerRunning = () => {
+        return localStorageService.get("comp.isRunning");
+    };
+
+    // set the state of the timer
+    this.setTimerRunning = (b) => {
+        localStorageService.set("comp.isRunning", b);
+    };
 });
