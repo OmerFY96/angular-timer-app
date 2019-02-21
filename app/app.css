@@ -70,3 +70,7 @@ md-list-item .md-list-item-inner>md-checkbox.remove-checkbox {
 #chart-container {
     padding-top: 25px;
 }
+
+#clear-button {
+    padding-top: 15%;
+}
